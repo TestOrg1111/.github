@@ -15,3 +15,5 @@ jobs:
         sha: $
         run_id: $
         name: $ # Default: name of workflow. This name is shown with the check, but can be changed.
+    - name: Checkout repository
+      uses: actions/checkout@v2
