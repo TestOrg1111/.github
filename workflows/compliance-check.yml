@@ -1,0 +1,17 @@
+name: compliance-check 
+
+on:
+  repository_dispatch:
+    types: [org-workflow-bot]  # <-- requirement to trigger central workflows 
+    
+jobs:
+  register-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: SvanBoxel/organization-workflow@main
+      with:
+        id: $
+        callback_url: $
+        sha: $
+        run_id: $
+        name: $ # Default: name of workflow. This name is shown with the check, but can be changed.
